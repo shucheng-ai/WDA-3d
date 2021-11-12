@@ -1,0 +1,14 @@
+version: '3'
+services:
+  node:
+    image: 'cyborg/node14'
+    container_name: cyborg-web-build
+    user: 'root'
+    working_dir: /beaver-3d
+    volumes:
+      - ../:/beaver-3d
+    command: >
+      /bin/bash -c "
+      cd app;
+      npm run build;
+      "

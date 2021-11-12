@@ -1,0 +1,15 @@
+version: '3'
+services:
+  node:
+    image: 'cyborg/node14'
+    container_name: cyborg-web
+    user: 'root'
+    working_dir: /app
+    ports:
+      - 8088:8088
+    volumes:
+      - ../app/:/app
+    command: >
+      /bin/bash -c "
+      npm run serve
+      "
